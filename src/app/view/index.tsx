@@ -12,7 +12,7 @@ const View = () => {
       appId={appId}
       src="https://play.defiland.app"
       title="DeFi Land: Gamified Decentralized Finance"
-      background={{ light: '#1b142b', dark: '#1b142b' }}
+      background={{ light: '#4abffe', dark: '#4abffe' }}
     />
   )
 }
