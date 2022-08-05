@@ -1,7 +1,8 @@
 import { useEffect } from 'react'
-import { useUI } from '@sentre/senhub'
+import { net, useUI } from '@sentre/senhub'
 
 import EmbededView from '@sentre/embeded-view'
+import MainnetOnly from './mainnetOnly'
 
 import configs from 'configs'
 
@@ -16,6 +17,7 @@ const View = () => {
     setBackground({ light: '#4abffe', dark: '#4abffe' })
   }, [setBackground])
 
+  if (net !== 'mainnet') return <MainnetOnly />
   return (
     <EmbededView
       wallet={window.sentre.wallet}
