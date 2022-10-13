@@ -1,5 +1,4 @@
-import { useEffect } from 'react'
-import { net, useSetBackground } from '@sentre/senhub'
+import { net } from '@sentre/senhub'
 
 import EmbededView from '@sentre/embeded-view'
 import MainnetOnly from './mainnetOnly'
@@ -11,16 +10,10 @@ const {
 } = configs
 
 const View = () => {
-  const setBackground = useSetBackground()
-
-  useEffect(() => {
-    setBackground({ light: '#4abffe', dark: '#4abffe' })
-  }, [setBackground])
-
   if (net !== 'mainnet') return <MainnetOnly />
   return (
     <EmbededView
-      wallet={window.sentre.wallet}
+      wallet={window.sentre.solana}
       appId={appId}
       src="https://play.defiland.app"
       title="DeFi Land: Gamified Decentralized Finance"
